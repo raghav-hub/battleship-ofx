@@ -17,7 +17,7 @@ using BattleshipChallengeApi.Tests.Fixtures;
 
 namespace BattleshipChallengeApi.Tests
 {
-    public class ValuesControllerTests : ValuesControllerFixture    
+    public class BoardControllerTests : BoardsControllerFixture    
     {
         [Fact]
         public async Task TestGet()
@@ -30,7 +30,7 @@ namespace BattleshipChallengeApi.Tests
 
             // assert
             Assert.Equal(200, (int)_result.StatusCode);
-            Assert.Equal("[\"value111\",\"value222\"]", _result.Content.ReadAsStringAsync().Result);
+            Assert.Equal("this is for test purposes", _result.Content.ReadAsStringAsync().Result);
         }
     }
 }

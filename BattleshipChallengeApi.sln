@@ -27,6 +27,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "screenshots", "screenshots"
 		build\deployment.PNG = build\deployment.PNG
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleshipChallenge.Core", "src\BattleshipChallenge.Core\BattleshipChallenge.Core.csproj", "{68E1B058-04F8-4285-AB13-A04A4BB817EC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,10 @@ Global
 		{38CEC991-1839-465C-8D2D-8ED69ABDB90C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38CEC991-1839-465C-8D2D-8ED69ABDB90C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38CEC991-1839-465C-8D2D-8ED69ABDB90C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68E1B058-04F8-4285-AB13-A04A4BB817EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68E1B058-04F8-4285-AB13-A04A4BB817EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68E1B058-04F8-4285-AB13-A04A4BB817EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68E1B058-04F8-4285-AB13-A04A4BB817EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -49,6 +55,7 @@ Global
 		{06EA6865-893E-4034-878A-0ABF52E0A292} = {54C9EEA6-4DA9-4770-9050-EDDBE0C3B5B3}
 		{38CEC991-1839-465C-8D2D-8ED69ABDB90C} = {44E7A3F8-48D2-4908-B245-F2BF285080F5}
 		{811F02E3-9187-4F9A-944C-AEBBF0659595} = {BBC9D0EB-B29D-4067-9971-B73A319A9FE9}
+		{68E1B058-04F8-4285-AB13-A04A4BB817EC} = {54C9EEA6-4DA9-4770-9050-EDDBE0C3B5B3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9CE34CCA-F138-40F5-8D61-51732B1E3DAE}

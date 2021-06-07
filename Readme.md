@@ -23,3 +23,8 @@ run tests: `dotnet test`
  ![](./screenshots/deployment.PNG "deployment execution")
 - url to test https://aypg2ezaoe.execute-api.ap-southeast-2.amazonaws.com/Prod/api/values
 
+
+### Assumptions made:
+- as there is no persistance needed, using an im-memory allocation for storing the state of a game
+- if persistance exists, there would be a three tier design with BattleshipChallenge.Data project managing the repository layer
+

@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 
 namespace BattleshipChallengeApi.Tests.Fixtures
 {
-    public class ValuesControllerFixture : ControllerFixtureBase
+    public class BoardsControllerFixture : ControllerFixtureBase
     {
         protected HttpClient _apiCaller;
         protected HttpResponseMessage _result;
@@ -23,7 +23,7 @@ namespace BattleshipChallengeApi.Tests.Fixtures
 
         protected async Task CallApiAsync()
         {
-            _result = await _apiCaller.GetAsync("/api/values");
+            _result = await _apiCaller.GetAsync("/api/boards/1");
         }
     }
 }
