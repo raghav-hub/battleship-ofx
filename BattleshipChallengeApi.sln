@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BattleshipChallenge.Api", "src\BattleshipChallenge.Api\BattleshipChallenge.Api.csproj", "{06EA6865-893E-4034-878A-0ABF52E0A292}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BattleshipChallengeApi.Tests", "tests\BattleshipChallengeApi.Tests\BattleshipChallengeApi.Tests.csproj", "{38CEC991-1839-465C-8D2D-8ED69ABDB90C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{54C9EEA6-4DA9-4770-9050-EDDBE0C3B5B3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{44E7A3F8-48D2-4908-B245-F2BF285080F5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{FADA45E5-69D2-45CB-B9FB-93A9A1207DE1}"
+	ProjectSection(SolutionItems) = preProject
+		build\Readme.md = build\Readme.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solutionItems", "solutionItems", "{BBC9D0EB-B29D-4067-9971-B73A319A9FE9}"
+	ProjectSection(SolutionItems) = preProject
+		OFX_Coding_Exercise2020.pdf = OFX_Coding_Exercise2020.pdf
+		Readme.md = Readme.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "screenshots", "screenshots", "{811F02E3-9187-4F9A-944C-AEBBF0659595}"
+	ProjectSection(SolutionItems) = preProject
+		build\deployment.PNG = build\deployment.PNG
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{06EA6865-893E-4034-878A-0ABF52E0A292}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06EA6865-893E-4034-878A-0ABF52E0A292}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06EA6865-893E-4034-878A-0ABF52E0A292}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06EA6865-893E-4034-878A-0ABF52E0A292}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38CEC991-1839-465C-8D2D-8ED69ABDB90C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38CEC991-1839-465C-8D2D-8ED69ABDB90C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38CEC991-1839-465C-8D2D-8ED69ABDB90C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38CEC991-1839-465C-8D2D-8ED69ABDB90C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{06EA6865-893E-4034-878A-0ABF52E0A292} = {54C9EEA6-4DA9-4770-9050-EDDBE0C3B5B3}
+		{38CEC991-1839-465C-8D2D-8ED69ABDB90C} = {44E7A3F8-48D2-4908-B245-F2BF285080F5}
+		{811F02E3-9187-4F9A-944C-AEBBF0659595} = {BBC9D0EB-B29D-4067-9971-B73A319A9FE9}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9CE34CCA-F138-40F5-8D61-51732B1E3DAE}
+	EndGlobalSection
+EndGlobal
