@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace BattleshipChallenge.Api
+namespace BattleshipChallengeApi
 {
     /// <summary>
     /// This class extends from APIGatewayProxyFunction which contains the method FunctionHandlerAsync which is the
