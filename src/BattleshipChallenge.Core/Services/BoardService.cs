@@ -33,7 +33,7 @@ namespace BattleshipChallenge.Core.Services
             }
             catch (Exception ex)
             {
-                throw new NotFoundException(ex.Message);
+                throw new NotFoundException($"no board found with the requested Id");
             }
 
             shipToAdd.OccupiedCoordinates = boardToUpdate.GetShipCoordinates(shipToAdd.Size);

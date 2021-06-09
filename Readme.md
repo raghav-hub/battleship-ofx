@@ -61,4 +61,4 @@ run all the tests: `dotnet test`<br/><br/>
 - as there is no persistance needed, using an im-memory allocation for storing the state of a game
 - if persistance exists, there would be a three tier design with BattleshipChallenge.Data project managing the repository layer
 - when a Ship is added from the api, the response returns the `OccupiedCoordinates`, `HitCoordinates` it is assigned to, this should not happen, its returned for reviewing the attack call
-
+- the solution is using serverless infrastructure, so the persistance of the data might not be available for far too long

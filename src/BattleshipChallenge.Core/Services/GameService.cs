@@ -34,7 +34,7 @@ namespace BattleshipChallenge.Core.Services
             catch (Exception ex)
             {
                 _logger.LogInformation("no boardId found with {boardId}", boardId);
-                throw new NotFoundException($"no board found with the id {boardId}");
+                throw new NotFoundException("no board found with the requested Id");
             }
             
 
