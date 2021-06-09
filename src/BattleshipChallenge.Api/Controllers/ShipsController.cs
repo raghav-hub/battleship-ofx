@@ -1,25 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using BattleshipChallenge.Core.Models;
+﻿using BattleshipChallenge.Core.Models;
+using BattleshipChallenge.Core.Services;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace BattleshipChallenge.Api.Controllers
 {
-    [Route("api/boards/{boardId:int}/[controller]")]
+    [Route("api/boards/{boardId}/players/{playerId}/[controller]")]
     public class ShipsController : ControllerBase
     {
-        [HttpGet("{shipId}")]
-        public ActionResult Get(int boardId, int shipId)
+        private readonly IBoardService _boardService;
+
+        public ShipsController(IBoardService boardService)
         {
-            throw new NotImplementedException("in progress");
+            _boardService = boardService;
+        }
+
+        [HttpGet("{shipId}")]
+        public ActionResult Get(int shipId)
+        {
+            throw new NotImplementedException("not needed for the exercise");
         }
 
         [HttpPost]
-        public ActionResult Post(int boardId, [FromBody] Ship ship)
+        public ActionResult Post(Guid boardId, int playerId, [FromBody] Ship ship)
         {
-            throw new NotImplementedException("in progress");
+            Ship shipAdded = _boardService.AddShipToBoard(boardId, playerId, ship);
+            return Ok(shipAdded);
         }
     }
 }

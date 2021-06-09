@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "09ebbd9a-f7fe-4174-9b85-77702eed475c",
+		"name": "battleshipApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create new board",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"first board\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44384/api/boards",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44384",
+					"path": [
+						"api",
+						"boards"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create new player",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Name\": \"first player\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44384/api/players",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44384",
+					"path": [
+						"api",
+						"players"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add new ship",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Name\": \"cruiser ship\",\r\n    \"Size\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44384/api/boards/7a49b282-a974-4530-a75f-45596d3f20ee/players/a85b8310-09a2-4255-a611-50a8b28ba8e7/ships",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44384",
+					"path": [
+						"api",
+						"boards",
+						"7a49b282-a974-4530-a75f-45596d3f20ee",
+						"players",
+						"a85b8310-09a2-4255-a611-50a8b28ba8e7",
+						"ships"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "make an attack",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"RowNumber\": 8,\r\n    \"ColumnNumber\": 4\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44384/api/boards/7a49b282-a974-4530-a75f-45596d3f20ee/play",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44384",
+					"path": [
+						"api",
+						"boards",
+						"7a49b282-a974-4530-a75f-45596d3f20ee",
+						"play"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

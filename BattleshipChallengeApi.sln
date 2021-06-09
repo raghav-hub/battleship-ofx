@@ -18,7 +18,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{FADA45E5
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solutionItems", "solutionItems", "{BBC9D0EB-B29D-4067-9971-B73A319A9FE9}"
 	ProjectSection(SolutionItems) = preProject
-		OFX_Coding_Exercise2020.pdf = OFX_Coding_Exercise2020.pdf
+		SolutionItems\battleshipApi.postman_collection.json = solutionItems\battleshipApi.postman_collection.json
+		SolutionItems\OFX_Coding_Exercise2020.pdf = solutionItems\OFX_Coding_Exercise2020.pdf
 		Readme.md = Readme.md
 	EndProjectSection
 EndProject
@@ -27,7 +28,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "screenshots", "screenshots"
 		build\deployment.PNG = build\deployment.PNG
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleshipChallenge.Core", "src\BattleshipChallenge.Core\BattleshipChallenge.Core.csproj", "{68E1B058-04F8-4285-AB13-A04A4BB817EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BattleshipChallenge.Core", "src\BattleshipChallenge.Core\BattleshipChallenge.Core.csproj", "{68E1B058-04F8-4285-AB13-A04A4BB817EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

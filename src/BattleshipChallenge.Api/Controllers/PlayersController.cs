@@ -1,26 +1,43 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Permissions;
-using System.Threading.Tasks;
-using BattleshipChallenge.Core.Models;
+﻿using BattleshipChallenge.Core.Models;
+using BattleshipChallenge.Core.Services;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace BattleshipChallenge.Api.Controllers
 {
-    [Route("api/boards/{boardId:int}/[controller]")]
+    [Route("api/[controller]")]
     public class PlayersController : ControllerBase
     {
-        [HttpGet("{playerId}")]
-        public ActionResult Get(int boardId, int playerId)
+        private readonly IPlayerService _playerService;
+
+        public PlayersController(IPlayerService playerService)
         {
-            throw new NotImplementedException("in progress");
+            _playerService = playerService;
+        }
+
+        [HttpGet("{playerId}")]
+        public ActionResult Get(int playerId)
+        {
+            throw new NotImplementedException("not needed for this exercise");
         }
 
         [HttpPost]
-        public ActionResult Post(int boardId, [FromBody] Player player)
+        public ActionResult Post([FromBody] Player player)
         {
-            throw new NotImplementedException("in progress");
+            Player createdPlayer = _playerService.SavePlayer(player);
+            return Ok(player);
+        }
+
+        [HttpPut]
+        public void Put([FromBody] Player board)
+        {
+            throw new NotImplementedException("not needed for this exercise");
+        }
+
+        [HttpDelete("{playerId}")]
+        public void Delete(int playerId)
+        {
+            throw new NotImplementedException("not needed for this exercise");
         }
     }
 }

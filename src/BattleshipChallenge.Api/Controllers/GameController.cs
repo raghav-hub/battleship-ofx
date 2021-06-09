@@ -1,19 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using BattleshipChallenge.Core.Models;
+using BattleshipChallenge.Core.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BattleshipChallenge.Api.Controllers
 {
-    [Route("api/boards/{boardId:int}/play")]
+    [Route("api/boards/{boardId}/play")]
     public class GameController : ControllerBase
     {
-        [HttpPost]
-        public ActionResult Post(int boardId, [FromBody] Coordinates attackCoordinates)
+        private readonly IGameService _gameService;
+
+        public GameController(IGameService gameService)
         {
-            throw new NotImplementedException();
+            _gameService = gameService;
+        }
+
+        [HttpPost]
+        public ActionResult Post(Guid boardId, [FromBody] Coordinates attackedCoordinates)
+        {
+            AttackResponse response = _gameService.Attack(boardId, attackedCoordinates);
+            return Ok(response);
         }
     }
 }

@@ -1,39 +1,44 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Threading.Tasks;
-using BattleshipChallenge.Core.Models;
+﻿using BattleshipChallenge.Core.Models;
+using BattleshipChallenge.Core.Services;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace BattleshipChallenge.Api.Controllers
 {
     [Route("api/[controller]")]
     public class BoardsController : ControllerBase
     {
+        private readonly IBoardService _boardService;
+
+        public BoardsController(IBoardService boardService)
+        {
+            _boardService = boardService;
+        }
+
         [HttpGet("{boardId}")]
         public ActionResult Get(int boardId)
+
         {
-            return Ok("this is for test purposes");
+            throw new NotImplementedException("not needed for this exercise");
         }
 
         [HttpPost]
         public ActionResult Post([FromBody] Board board)
         {
-            throw new NotImplementedException("in progress");
+            Board newBoard = _boardService.SaveBoard(board);
+            return Ok(newBoard);
         }
 
         [HttpPut]
         public void Put([FromBody] Board board)
         {
-            throw new NotImplementedException("not needed for exercise");
+            throw new NotImplementedException("not needed for this exercise");
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("{boardId}")]
         public void Delete(int boardId)
         {
-            // deletes the specific board
-            throw new NotImplementedException("not needed for exercise");
+            throw new NotImplementedException("not needed for this exercise");
         }
     }
 }

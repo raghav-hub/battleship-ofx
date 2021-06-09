@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace BattleshipChallenge.Core.Models
+﻿namespace BattleshipChallenge.Core.Models
 {
     public class AttackResponse
     {

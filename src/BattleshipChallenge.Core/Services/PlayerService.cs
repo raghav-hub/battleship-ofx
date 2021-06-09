@@ -1,25 +1,29 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using BattleshipChallenge.Core.Models;
+using BattleshipChallenge.Core.Store;
+using System.Linq;
 
 namespace BattleshipChallenge.Core.Services
 {
     public interface IPlayerService
     {
         Player SavePlayer(Player playerToAdd);
-        void AddPlayerToBoard(int boardId, int playerId);
     }
+
     public class PlayerService : IPlayerService
     {
-        public Player SavePlayer(Player playerToCreate)
+        private readonly InMemoryStore _inMemoryStore;
+
+        public PlayerService(InMemoryStore inMemoryStore)
         {
-            throw new NotImplementedException();
+            _inMemoryStore = inMemoryStore;
         }
 
-        public void AddPlayerToBoard(int boardId, int playerId)
+        public Player SavePlayer(Player playerToCreate)
         {
-            throw new NotImplementedException();
+            playerToCreate.Id = Guid.NewGuid();
+            _inMemoryStore.Players.Add(playerToCreate);
+            return playerToCreate;
         }
     }
 }
