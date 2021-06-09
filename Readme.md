@@ -35,10 +35,10 @@ the idea is to run a complete e2e test by having a testdouble/mock at the end fo
 - dotnet lambda deploy-serverless --stack-name battleship-challenge-app --profile ofx-battleship --s3-bucket battleship-challenge-application
 - command above should deploy the application template serverless.template which includes an api gateway pointing to the lambda as an endpoint having the application code
  ![](./screenshots/deployment.PNG "deployment execution")
-- url to test https://aypg2ezaoe.execute-api.ap-southeast-2.amazonaws.com/Prod/api/values
+- url to test https://aypg2ezaoe.execute-api.ap-southeast-2.amazonaws.com/Prod/
 
-# Build
-## dotnet cli commands
+## Build
+### dotnet cli commands
 navigate to /src/BattleshipChallenge.Api folder from gitbash<br/>
 compile the code: `dotnet build`<br/>
 run the application: `dotnet run`<br/>
@@ -47,16 +47,16 @@ use the postman collection created to test all the requests as per the requireme
 
 * postman collection json to import to postman client: [allCallsPostmanCollection](./solutionItems/battleshipApi.postman_collection.json)
 
-## visual studio
+### visual studio
 run the application pointing to BattleshipChallenge.Api as startup project with defaulting to IIS express<br/>
 this should start the project on port 44384 https://localhost:44384/<br/><br/>
 
-# Test
+## Test
 navigate to /tests/BattleshipChallengeApi.Tests folder<br/>
 run all the tests: `dotnet test`<br/><br/>
 
 
-### Assumptions made:
+## Assumptions made
 - as there is no persistance needed, using an im-memory allocation for storing the state of a game
 - if persistance exists, there would be a three tier design with BattleshipChallenge.Data project managing the repository layer
 - when a Ship is added from the api, the response returns the `OccupiedCoordinates`, `HitCoordinates` it is assigned to, this should not happen, its returned for reviewing the attack call

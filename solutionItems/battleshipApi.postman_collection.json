@@ -20,13 +20,17 @@
 					}
 				},
 				"url": {
-					"raw": "https://localhost:44384/api/boards",
+					"raw": "https://aypg2ezaoe.execute-api.ap-southeast-2.amazonaws.com/Prod/api/boards",
 					"protocol": "https",
 					"host": [
-						"localhost"
+						"aypg2ezaoe",
+						"execute-api",
+						"ap-southeast-2",
+						"amazonaws",
+						"com"
 					],
-					"port": "44384",
 					"path": [
+						"Prod",
 						"api",
 						"boards"
 					]
@@ -49,13 +53,17 @@
 					}
 				},
 				"url": {
-					"raw": "https://localhost:44384/api/players",
+					"raw": "https://aypg2ezaoe.execute-api.ap-southeast-2.amazonaws.com/Prod/api/players",
 					"protocol": "https",
 					"host": [
-						"localhost"
+						"aypg2ezaoe",
+						"execute-api",
+						"ap-southeast-2",
+						"amazonaws",
+						"com"
 					],
-					"port": "44384",
 					"path": [
+						"Prod",
 						"api",
 						"players"
 					]
@@ -78,18 +86,22 @@
 					}
 				},
 				"url": {
-					"raw": "https://localhost:44384/api/boards/7a49b282-a974-4530-a75f-45596d3f20ee/players/a85b8310-09a2-4255-a611-50a8b28ba8e7/ships",
+					"raw": "https://aypg2ezaoe.execute-api.ap-southeast-2.amazonaws.com/Prod/api/boards/a86fb4d3-a2bd-4dc4-9fe2-422f19085d29/players/1b451887-97eb-4956-984a-04cfdd80b427/ships",
 					"protocol": "https",
 					"host": [
-						"localhost"
+						"aypg2ezaoe",
+						"execute-api",
+						"ap-southeast-2",
+						"amazonaws",
+						"com"
 					],
-					"port": "44384",
 					"path": [
+						"Prod",
 						"api",
 						"boards",
-						"7a49b282-a974-4530-a75f-45596d3f20ee",
+						"a86fb4d3-a2bd-4dc4-9fe2-422f19085d29",
 						"players",
-						"a85b8310-09a2-4255-a611-50a8b28ba8e7",
+						"1b451887-97eb-4956-984a-04cfdd80b427",
 						"ships"
 					]
 				}
@@ -103,7 +115,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"RowNumber\": 8,\r\n    \"ColumnNumber\": 4\r\n}",
+					"raw": "{\r\n    \"RowNumber\": 7,\r\n    \"ColumnNumber\": 4\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -111,16 +123,20 @@
 					}
 				},
 				"url": {
-					"raw": "https://localhost:44384/api/boards/7a49b282-a974-4530-a75f-45596d3f20ee/play",
+					"raw": "https://aypg2ezaoe.execute-api.ap-southeast-2.amazonaws.com/Prod/api/boards/a86fb4d3-a2bd-4dc4-9fe2-422f19085d29/play",
 					"protocol": "https",
 					"host": [
-						"localhost"
+						"aypg2ezaoe",
+						"execute-api",
+						"ap-southeast-2",
+						"amazonaws",
+						"com"
 					],
-					"port": "44384",
 					"path": [
+						"Prod",
 						"api",
 						"boards",
-						"7a49b282-a974-4530-a75f-45596d3f20ee",
+						"a86fb4d3-a2bd-4dc4-9fe2-422f19085d29",
 						"play"
 					]
 				}
