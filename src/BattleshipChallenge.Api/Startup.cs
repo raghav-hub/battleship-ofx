@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices.ComTypes;
+using BattleshipChallenge.Api.Infrastructure;
 using BattleshipChallenge.Core.Models;
 using BattleshipChallenge.Core.Services;
 using BattleshipChallenge.Core.Store;
@@ -48,6 +49,7 @@ namespace BattleshipChallenge.Api
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseMiddleware<ExceptionMiddleware>();
             app.UseHttpsRedirection();
 
             app.UseRouting();

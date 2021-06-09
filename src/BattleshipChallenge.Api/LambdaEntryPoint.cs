@@ -1,16 +1,12 @@
-using System;
-using System.Linq;
-using System.Threading.Tasks;
-using BattleshipChallenge.Api;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace BattleshipChallengeApi
+namespace BattleshipChallenge.Api
 {
     /// <summary>
-    /// This class extends from APIGatewayProxyFunction which contains the method FunctionHandlerAsync which is the 
+    /// This class extends from APIGatewayProxyFunction which contains the method FunctionHandlerAsync which is the
     /// actual Lambda function entry point. The Lambda handler field should be set to
-    /// 
+    ///
     /// BattleshipChallengeApi::BattleshipChallengeApi.LambdaEntryPoint::FunctionHandlerAsync
     /// </summary>
     public class LambdaEntryPoint :
@@ -22,7 +18,7 @@ namespace BattleshipChallengeApi
         // API Gateway HTTP API payload version 1.0     -> Amazon.Lambda.AspNetCoreServer.APIGatewayProxyFunction
         // API Gateway HTTP API payload version 2.0     -> Amazon.Lambda.AspNetCoreServer.APIGatewayHttpApiV2ProxyFunction
         // Application Load Balancer                    -> Amazon.Lambda.AspNetCoreServer.ApplicationLoadBalancerFunction
-        // 
+        //
         // Note: When using the AWS::Serverless::Function resource with an event type of "HttpApi" then payload version 2.0
         // will be the default and you must make Amazon.Lambda.AspNetCoreServer.APIGatewayHttpApiV2ProxyFunction the base class.
 
@@ -35,13 +31,12 @@ namespace BattleshipChallengeApi
         /// <param name="builder"></param>
         protected override void Init(IWebHostBuilder builder)
         {
-            builder
-                .UseStartup<Startup>();
+            builder.UseStartup<Startup>();
         }
 
         /// <summary>
-        /// Use this override to customize the services registered with the IHostBuilder. 
-        /// 
+        /// Use this override to customize the services registered with the IHostBuilder.
+        ///
         /// It is recommended not to call ConfigureWebHostDefaults to configure the IWebHostBuilder inside this method.
         /// Instead customize the IWebHostBuilder in the Init(IWebHostBuilder) overload.
         /// </summary>

@@ -26,7 +26,7 @@ namespace BattleshipChallenge.Api.Controllers
         public ActionResult Post([FromBody] Board board)
         {
             Board newBoard = _boardService.SaveBoard(board);
-            return Ok(newBoard);
+            return Created(string.Empty, newBoard);
         }
 
         [HttpPut]

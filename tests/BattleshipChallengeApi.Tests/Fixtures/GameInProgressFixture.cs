@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using BattleshipChallenge.Core.Models;
 using System.Net.Http;
 using System.Net.Http.Json;
-using System.Runtime.InteropServices;
 using System.Threading.Tasks;
+using BattleshipChallenge.Core.Models;
 using BattleshipChallenge.Core.Store;
+using BattleshipChallengeApi.IntegrationTests.Fixtures;
 using BattleshipChallengeApi.UnitTests;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;
@@ -15,7 +14,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Options;
 
-namespace BattleshipChallengeApi.IntegrationTests.Fixtures
+namespace BattleshipChallengeApi.Tests.Fixtures
 {
     public class GameInProgressFixture : ControllerFixtureBase
     {

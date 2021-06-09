@@ -10,6 +10,7 @@ This is a simple restful API for implementing the Battleship game, rules are lis
 <p>added dependency injection to load the concrete implementations</p>
 <p>added narrow integration tests for the main api calls</p>
 <p>throroughly unit tested Fetch coordinates logic for adding a new ship to the board</p>
+<p>added exception middware handler, which logs any application error and returns a 500 status code with message</p>
 
 ## tests approach
 <p>following the pattern of narrow integration tests by martin fowler https://martinfowler.com/bliki/IntegrationTest.html,

@@ -1,9 +1,12 @@
-﻿using System.Net.Http.Json;
+﻿using System;
+using System.Net.Http.Json;
 using System.Threading.Tasks;
 using BattleshipChallenge.Core.Models;
 using BattleshipChallengeApi.IntegrationTests.Fixtures;
+using BattleshipChallengeApi.Tests.Fixtures;
 using BattleshipChallengeApi.UnitTests;
 using FluentAssertions;
+using Microsoft.AspNetCore.Http;
 using Xunit;
 
 namespace BattleshipChallengeApi.Tests
@@ -29,6 +32,25 @@ namespace BattleshipChallengeApi.Tests
 
             // to be enabled after the 'OccupiedCoordinates', 'HitCoordinates' are ignored using JsonIgnore attribute(post code review)
             //addShipResponse.Should().BeEquivalentTo(expectedShip);
+        }
+
+        [Fact]
+        public async Task Add_Ship_To_Non_Existing_Board()
+        {
+            // arrange
+            CreateSut();
+            var expectedShip = new Ship
+            {
+                Name = RandomBuilder.NextString(),
+                Size = RandomBuilder.NextNumber(9)
+            };
+            _addToShipBoardId = Guid.NewGuid();
+
+            // act
+            var addShipResponse = (await CallAddShipToBoardApiAsync(expectedShip));
+
+            // assert
+            addShipResponse.StatusCode.Should().Be(StatusCodes.Status404NotFound);
         }
 
         [Fact]

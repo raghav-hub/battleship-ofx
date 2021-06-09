@@ -3,6 +3,7 @@ using BattleshipChallenge.Core.Models;
 using BattleshipChallenge.Core.Store;
 using System.Collections.Generic;
 using System.Linq;
+using BattleshipChallenge.Core.Exceptions;
 
 namespace BattleshipChallenge.Core.Services
 {
@@ -24,8 +25,17 @@ namespace BattleshipChallenge.Core.Services
 
         public Ship AddShipToBoard(Guid boardId, int playerId, Ship shipToAdd)
         {
-            // always expect for the board/player to be created before the game begins
-            Board boardToUpdate = _inMemoryStore.Boards.First(board => board.Id == boardId);
+            Board boardToUpdate;
+            try
+            {
+                // always expect for the board/player to be created before the game begins
+                boardToUpdate = _inMemoryStore.Boards.First(board => board.Id == boardId);
+            }
+            catch (Exception ex)
+            {
+                throw new NotFoundException(ex.Message);
+            }
+
             shipToAdd.OccupiedCoordinates = boardToUpdate.GetShipCoordinates(shipToAdd.Size);
 
             // check if player exists

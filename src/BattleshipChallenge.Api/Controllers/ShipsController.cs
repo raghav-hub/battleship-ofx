@@ -25,7 +25,7 @@ namespace BattleshipChallenge.Api.Controllers
         public ActionResult Post(Guid boardId, int playerId, [FromBody] Ship ship)
         {
             Ship shipAdded = _boardService.AddShipToBoard(boardId, playerId, ship);
-            return Ok(shipAdded);
+            return Created(string.Empty, shipAdded);
         }
     }
 }

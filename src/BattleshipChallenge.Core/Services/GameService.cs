@@ -3,6 +3,8 @@ using BattleshipChallenge.Core.Models;
 using BattleshipChallenge.Core.Store;
 using System.Collections.Generic;
 using System.Linq;
+using BattleshipChallenge.Core.Exceptions;
+using Microsoft.Extensions.Logging;
 
 namespace BattleshipChallenge.Core.Services
 {
@@ -14,15 +16,27 @@ namespace BattleshipChallenge.Core.Services
     public class GameService : IGameService
     {
         private readonly InMemoryStore _inMemoryStore;
+        private readonly ILogger<GameService> _logger;
 
-        public GameService(InMemoryStore inMemoryStore)
+        public GameService(InMemoryStore inMemoryStore, ILogger<GameService> logger)
         {
             _inMemoryStore = inMemoryStore;
+            _logger = logger;
         }
 
         public AttackResponse Attack(Guid boardId, Coordinates coordinates)
         {
-            Board boardInPlay = _inMemoryStore.Boards.First(o => o.Id == boardId);
+            Board boardInPlay = null;
+            try
+            {
+                boardInPlay = _inMemoryStore.Boards.First(o => o.Id == boardId);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogInformation("no boardId found with {boardId}", boardId);
+                throw new NotFoundException($"no board found with the id {boardId}");
+            }
+            
 
             // for this exercise only using a single player limiting the game to the task requirements, hence PlayerShips.First() below
             Ship shipUnderAttack = boardInPlay.PlayerShips.First().Ships
