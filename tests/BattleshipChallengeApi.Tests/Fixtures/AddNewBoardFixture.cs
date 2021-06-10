@@ -1,5 +1,4 @@
-﻿using System;
-using BattleshipChallenge.Core.Models;
+﻿using BattleshipChallenge.Core.Models;
 using BattleshipChallenge.Core.Store;
 using BattleshipChallengeApi.UnitTests;
 using FluentAssertions;
@@ -8,6 +7,7 @@ using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Options;
+using System;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;

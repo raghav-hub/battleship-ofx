@@ -1,12 +1,11 @@
-﻿using System;
-using System.Net.Http.Json;
-using System.Threading.Tasks;
-using BattleshipChallenge.Core.Models;
-using BattleshipChallengeApi.IntegrationTests.Fixtures;
+﻿using BattleshipChallenge.Core.Models;
 using BattleshipChallengeApi.Tests.Fixtures;
 using BattleshipChallengeApi.UnitTests;
 using FluentAssertions;
 using Microsoft.AspNetCore.Http;
+using System;
+using System.Net.Http.Json;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace BattleshipChallengeApi.Tests
@@ -60,7 +59,8 @@ namespace BattleshipChallengeApi.Tests
             CreateSut();
             var expectedAttackReponse = new AttackResponse()
             {
-                IsHit = true, IsSunk = false
+                IsHit = true,
+                IsSunk = false
             };
 
             // act

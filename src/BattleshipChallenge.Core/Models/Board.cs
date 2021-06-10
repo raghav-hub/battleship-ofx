@@ -8,34 +8,33 @@ namespace BattleshipChallenge.Core.Models
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
-
-        public IList<PlayerShips> PlayerShips { get; set; }
         public List<Coordinates> OccupiedCoordinates { get; set; }
+        public IList<PlayerShips> PlayerShips { get; set; }
 
         public IList<Coordinates> GetShipCoordinates(int shipSize)
         {
             OccupiedCoordinates ??= new List<Coordinates>();
-            bool shipCoordinatesFound = false;
+            var shipCoordinatesFound = false;
             var randomNumberGenerator = new Random();
             List<Coordinates> shipCoordinates = null;
             while (!shipCoordinatesFound)
             {
                 // initially assign startColumn, endColumn as same
                 // initially assign startRow, endRow as same
-                int startColumn = randomNumberGenerator.Next(1, 11);
-                int startRow = randomNumberGenerator.Next(1, 11);
-                int endColumn = startColumn;
-                int endRow = startRow;
+                var startColumn = randomNumberGenerator.Next(1, 11);
+                var startRow = randomNumberGenerator.Next(1, 11);
+                var endColumn = startColumn;
+                var endRow = startRow;
 
                 int alignment = randomNumberGenerator.Next(0, 1); // consider 0 for horizontal and 1 for vertical
 
                 if (alignment == 0) // endRow to update as the alignment is horizontal
                 {
-                    endColumn = endColumn + (shipSize - 1);
+                    endColumn += (shipSize - 1);
                 }
                 else // endColumn to update as the alignment is vertical
                 {
-                    endRow = endRow + (shipSize - 1);
+                    endRow += (shipSize - 1);
                 }
 
                 // if the coordinates fall out of the board, try again

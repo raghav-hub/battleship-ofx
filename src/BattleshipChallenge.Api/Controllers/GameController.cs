@@ -1,7 +1,7 @@
-﻿using System;
-using BattleshipChallenge.Core.Models;
+﻿using BattleshipChallenge.Core.Models;
 using BattleshipChallenge.Core.Services;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace BattleshipChallenge.Api.Controllers
 {

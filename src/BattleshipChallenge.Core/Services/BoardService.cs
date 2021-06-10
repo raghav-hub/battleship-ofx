@@ -1,9 +1,9 @@
-﻿using System;
+﻿using BattleshipChallenge.Core.Exceptions;
 using BattleshipChallenge.Core.Models;
 using BattleshipChallenge.Core.Store;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using BattleshipChallenge.Core.Exceptions;
 
 namespace BattleshipChallenge.Core.Services
 {

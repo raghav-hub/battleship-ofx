@@ -1,10 +1,10 @@
-﻿using System;
+﻿using BattleshipChallenge.Core.Exceptions;
 using BattleshipChallenge.Core.Models;
 using BattleshipChallenge.Core.Store;
+using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using BattleshipChallenge.Core.Exceptions;
-using Microsoft.Extensions.Logging;
 
 namespace BattleshipChallenge.Core.Services
 {
@@ -36,7 +36,6 @@ namespace BattleshipChallenge.Core.Services
                 _logger.LogInformation("no boardId found with {boardId}", boardId);
                 throw new NotFoundException("no board found with the requested Id");
             }
-            
 
             // for this exercise only using a single player limiting the game to the task requirements, hence PlayerShips.First() below
             Ship shipUnderAttack = boardInPlay.PlayerShips.First().Ships

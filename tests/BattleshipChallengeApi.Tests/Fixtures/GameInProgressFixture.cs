@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Net.Http.Json;
-using System.Threading.Tasks;
-using BattleshipChallenge.Core.Models;
+﻿using BattleshipChallenge.Core.Models;
 using BattleshipChallenge.Core.Store;
 using BattleshipChallengeApi.IntegrationTests.Fixtures;
 using BattleshipChallengeApi.UnitTests;
@@ -13,6 +7,12 @@ using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Options;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Json;
+using System.Threading.Tasks;
 
 namespace BattleshipChallengeApi.Tests.Fixtures
 {
@@ -25,7 +25,8 @@ namespace BattleshipChallengeApi.Tests.Fixtures
 
         protected Guid _addToShipBoardId;
         protected int _addToShipPlayerId;
-        #endregion
+
+        #endregion AddToShip data
 
         #region AttackShip data
 
@@ -33,12 +34,12 @@ namespace BattleshipChallengeApi.Tests.Fixtures
         private int _attackShipPlayerId;
         private int _attackedRowCoordinate;
         private int _attackedColumnCoordinate;
-        #endregion
+
+        #endregion AttackShip data
 
         public void CreateSut()
         {
             _apiCaller = CreateClient();
-            
         }
 
         protected async Task<HttpResponseMessage> CallAddShipToBoardApiAsync(Ship shipToCreate)
@@ -106,7 +107,8 @@ namespace BattleshipChallengeApi.Tests.Fixtures
                     }
                 }
             });
-            #endregion
+
+            #endregion populate test data into store
 
             base.ConfigureWebHost(builder);
 

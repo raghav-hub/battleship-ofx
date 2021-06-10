@@ -1,7 +1,6 @@
-﻿using System;
-using BattleshipChallenge.Core.Models;
+﻿using BattleshipChallenge.Core.Models;
 using BattleshipChallenge.Core.Store;
-using System.Linq;
+using System;
 
 namespace BattleshipChallenge.Core.Services
 {

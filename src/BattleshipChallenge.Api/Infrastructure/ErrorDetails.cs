@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace BattleshipChallenge.Api.Infrastructure
+﻿namespace BattleshipChallenge.Api.Infrastructure
 {
     public class ErrorDetails
     {

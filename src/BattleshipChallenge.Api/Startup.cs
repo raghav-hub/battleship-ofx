@@ -1,8 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Runtime.InteropServices.ComTypes;
 using BattleshipChallenge.Api.Infrastructure;
-using BattleshipChallenge.Core.Models;
 using BattleshipChallenge.Core.Services;
 using BattleshipChallenge.Core.Store;
 using Microsoft.AspNetCore.Builder;
@@ -12,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
+using System;
 
 namespace BattleshipChallenge.Api
 {
@@ -28,7 +25,7 @@ namespace BattleshipChallenge.Api
         public void ConfigureServices(IServiceCollection services)
         {
             // in-memory boards
-            Action<InMemoryStore> store = (_ => {});
+            Action<InMemoryStore> store = (_ => { });
 
             services.Configure(store);
             services.AddSingleton(resolver => resolver.GetRequiredService<IOptions<InMemoryStore>>().Value);
