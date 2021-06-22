@@ -2,10 +2,12 @@
 using BattleshipChallenge.Core.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using BattleshipChallenge.Api.Infrastructure;
 
 namespace BattleshipChallenge.Api.Controllers
 {
     [Route("api/boards/{boardId}/players/{playerId}/[controller]")]
+    [ApiController]
     public class ShipsController : ControllerBase
     {
         private readonly IBoardService _boardService;
@@ -22,10 +24,10 @@ namespace BattleshipChallenge.Api.Controllers
         }
 
         [HttpPost]
-        public ActionResult Post(Guid boardId, int playerId, [FromBody] Ship ship)
+        public ActionResult Post(Guid boardId, Guid playerId, [FromBody] Ship ship)
         {
             Ship shipAdded = _boardService.AddShipToBoard(boardId, playerId, ship);
-            return Created(string.Empty, shipAdded);
+            return Created(string.Empty, new ApiSuccessResponse(shipAdded));
         }
     }
 }

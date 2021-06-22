@@ -59,7 +59,7 @@ namespace BattleshipChallengeApi.IntegrationTests.ShipCoordinateAllocationTests.
 
             boardInAction.PlayerShips.Add(new PlayerShips()
             {
-                PlayerId = RandomBuilder.NextNumber()
+                PlayerId = RandomBuilder.NextGuid()
             });
 
             // expected new ship coordinates
@@ -99,7 +99,7 @@ namespace BattleshipChallengeApi.IntegrationTests.ShipCoordinateAllocationTests.
 
             boardInAction.PlayerShips.Add(new PlayerShips()
             {
-                PlayerId = RandomBuilder.NextNumber()
+                PlayerId = RandomBuilder.NextGuid()
             });
 
             // expected new ship coordinates

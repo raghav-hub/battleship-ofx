@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 
-namespace BattleshipChallengeApi.IntegrationTests.Fixtures
+namespace BattleshipChallengeApi.Tests.Fixtures
 {
     public class ControllerFixtureBase : WebApplicationFactory<LocalEntryPoint>
     {

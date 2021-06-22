@@ -60,11 +60,7 @@ namespace BattleshipChallenge.Api.Infrastructure
             context.Response.ContentType = "application/json";
             context.Response.StatusCode = (int)code;
 
-            return context.Response.WriteAsync(new ErrorDetails()
-            {
-                StatusCode = (int)code,
-                Message = message
-            }.ToString());
+            return context.Response.WriteAsync(new ApiErrorResponse(message).ToString());
         }
     }
 }

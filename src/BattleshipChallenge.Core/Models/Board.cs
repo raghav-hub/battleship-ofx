@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
 namespace BattleshipChallenge.Core.Models
@@ -7,6 +8,8 @@ namespace BattleshipChallenge.Core.Models
     public class Board
     {
         public Guid Id { get; set; }
+
+        [Required]
         public string Name { get; set; }
         public List<Coordinates> OccupiedCoordinates { get; set; }
         public IList<PlayerShips> PlayerShips { get; set; }
@@ -85,5 +88,14 @@ namespace BattleshipChallenge.Core.Models
 
             return shipCoordinates;
         }
+
+        public bool CanShipBeAdded(int newShipSize)
+        {
+            // is new ship size greater than no. of free coordinates
+            // TODO: still needs to check if the coordinates are in sequence for the new ship to git
+            return BoardSize - (OccupiedCoordinates?.Count() ?? 0) > newShipSize;
+        }
+
+        private const int BoardSize = 100; // 10*10
     }
 }

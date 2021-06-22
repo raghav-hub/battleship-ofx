@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Http;
 using System;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
+using BattleshipChallenge.Api.Infrastructure;
+using Newtonsoft.Json;
 using Xunit;
 
 namespace BattleshipChallengeApi.Tests
@@ -64,7 +66,8 @@ namespace BattleshipChallengeApi.Tests
             };
 
             // act
-            var attackResponse = (await CallAttackShipOnBoardApiAsync()).Content.ReadFromJsonAsync<AttackResponse>().Result;
+            var apiResponse = (await CallAttackShipOnBoardApiAsync()).Content.ReadFromJsonAsync<ApiSuccessResponse>().Result;
+            var attackResponse = JsonConvert.DeserializeObject<AttackResponse>(apiResponse.Data.ToString());
 
             // assert
             attackResponse.Should().BeEquivalentTo(expectedAttackReponse);
@@ -88,8 +91,10 @@ namespace BattleshipChallengeApi.Tests
             };
 
             // act
-            var attackOneResponse = (await CallAttackShipOnBoardApiAsync()).Content.ReadFromJsonAsync<AttackResponse>().Result;
-            var attackTwoResponse = (await CallAttackShipOnBoardApiAsync()).Content.ReadFromJsonAsync<AttackResponse>().Result;
+            var apiOneResponse = (await CallAttackShipOnBoardApiAsync()).Content.ReadFromJsonAsync<ApiSuccessResponse>().Result;
+            var attackOneResponse = JsonConvert.DeserializeObject<AttackResponse>(apiOneResponse.Data.ToString());
+            var apiTwoResponse = (await CallAttackShipOnBoardApiAsync()).Content.ReadFromJsonAsync<ApiSuccessResponse>().Result;
+            var attackTwoResponse = JsonConvert.DeserializeObject<AttackResponse>(apiTwoResponse.Data.ToString());
 
             // assert
             attackOneResponse.Should().BeEquivalentTo(expectedAttackOneResponse);

@@ -9,6 +9,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using System;
+using System.Linq;
+using System.Net;
+using System.Runtime.InteropServices.WindowsRuntime;
+using System.Text.Json;
+using Microsoft.AspNetCore.Mvc;
 
 namespace BattleshipChallenge.Api
 {
@@ -35,7 +40,15 @@ namespace BattleshipChallenge.Api
                 .AddTransient<IPlayerService, PlayerService>()
                 .AddTransient<IGameService, GameService>();
 
-            services.AddControllers();
+            services.AddControllers()
+                .ConfigureApiBehaviorOptions(options =>
+                {
+                    // handle model state validation errors
+                    options.InvalidModelStateResponseFactory = (context) =>
+                    {
+                        return new BadRequestObjectResult(new ApiErrorResponse(context.ModelState));
+                    };
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline

@@ -31,7 +31,7 @@ namespace BattleshipChallenge.Core.Services
             {
                 boardInPlay = _inMemoryStore.Boards.First(o => o.Id == boardId);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 _logger.LogInformation("no boardId found with {boardId}", boardId);
                 throw new NotFoundException("no board found with the requested Id");

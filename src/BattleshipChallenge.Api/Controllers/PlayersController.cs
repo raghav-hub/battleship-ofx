@@ -2,10 +2,12 @@
 using BattleshipChallenge.Core.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using BattleshipChallenge.Api.Infrastructure;
 
 namespace BattleshipChallenge.Api.Controllers
 {
     [Route("api/[controller]")]
+    [ApiController]
     public class PlayersController : ControllerBase
     {
         private readonly IPlayerService _playerService;
@@ -25,7 +27,7 @@ namespace BattleshipChallenge.Api.Controllers
         public ActionResult Post([FromBody] Player player)
         {
             Player createdPlayer = _playerService.SavePlayer(player);
-            return Ok(player);
+            return Ok(new ApiSuccessResponse(player));
         }
 
         [HttpPut]

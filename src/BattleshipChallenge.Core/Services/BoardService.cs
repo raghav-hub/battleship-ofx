@@ -9,7 +9,7 @@ namespace BattleshipChallenge.Core.Services
 {
     public interface IBoardService
     {
-        Ship AddShipToBoard(Guid boardId, int playerId, Ship shipToAdd);
+        Ship AddShipToBoard(Guid boardId, Guid playerId, Ship shipToAdd);
 
         Board SaveBoard(Board boardToCreate);
     }
@@ -23,7 +23,7 @@ namespace BattleshipChallenge.Core.Services
             _inMemoryStore = inMemoryStore;
         }
 
-        public Ship AddShipToBoard(Guid boardId, int playerId, Ship shipToAdd)
+        public Ship AddShipToBoard(Guid boardId, Guid playerId, Ship shipToAdd)
         {
             Board boardToUpdate;
             try
@@ -31,9 +31,14 @@ namespace BattleshipChallenge.Core.Services
                 // always expect for the board/player to be created before the game begins
                 boardToUpdate = _inMemoryStore.Boards.First(board => board.Id == boardId);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw new NotFoundException($"no board found with the requested Id");
+            }
+
+            if (!boardToUpdate.CanShipBeAdded(shipToAdd.Size))
+            {
+                throw new NotFoundException("cannot fit the ship on the board");
             }
 
             shipToAdd.OccupiedCoordinates = boardToUpdate.GetShipCoordinates(shipToAdd.Size);

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace BattleshipChallenge.Core.Models
 {
@@ -14,7 +15,10 @@ namespace BattleshipChallenge.Core.Models
             RowNumber = rowNumber;
         }
 
+        [Required]
         public int RowNumber { get; set; }
+
+        [Required]
         public int ColumnNumber { get; set; }
 
         // override equals to match on rowNo, colNo (no reference check needed)

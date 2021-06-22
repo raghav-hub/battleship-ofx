@@ -24,14 +24,14 @@ namespace BattleshipChallengeApi.Tests.Fixtures
         #region AddToShip data
 
         protected Guid _addToShipBoardId;
-        protected int _addToShipPlayerId;
+        protected Guid _addToShipPlayerId;
 
         #endregion AddToShip data
 
         #region AttackShip data
 
         private Guid _attckShipBoardId;
-        private int _attackShipPlayerId;
+        private Guid _attackShipPlayerId;
         private int _attackedRowCoordinate;
         private int _attackedColumnCoordinate;
 
@@ -52,7 +52,7 @@ namespace BattleshipChallengeApi.Tests.Fixtures
             return await _apiCaller.PostAsJsonAsync($"/api/boards/{_attckShipBoardId}/play", new Coordinates(_attackedRowCoordinate, _attackedColumnCoordinate));
         }
 
-        protected Guid FetchShipId(Guid boardId, int playerId, string name)
+        protected Guid FetchShipId(Guid boardId, Guid playerId, string name)
         {
             return _testState.Boards.FirstOrDefault(b => b.Id == boardId)
                     .PlayerShips.FirstOrDefault(p => p.PlayerId == playerId)
@@ -62,9 +62,9 @@ namespace BattleshipChallengeApi.Tests.Fixtures
         protected override void ConfigureWebHost(IWebHostBuilder builder)
         {
             _addToShipBoardId = RandomBuilder.NextGuid();
-            _addToShipPlayerId = RandomBuilder.NextNumber();
+            _addToShipPlayerId = RandomBuilder.NextGuid();
             _attckShipBoardId = RandomBuilder.NextGuid();
-            _attackShipPlayerId = RandomBuilder.NextNumber();
+            _attackShipPlayerId = RandomBuilder.NextGuid();
             _attackedRowCoordinate = RandomBuilder.NextNumber(11);
             _attackedColumnCoordinate = RandomBuilder.NextNumber(11);
 

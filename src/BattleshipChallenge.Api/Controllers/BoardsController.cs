@@ -2,10 +2,12 @@
 using BattleshipChallenge.Core.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using BattleshipChallenge.Api.Infrastructure;
 
 namespace BattleshipChallenge.Api.Controllers
 {
     [Route("api/[controller]")]
+    [ApiController]
     public class BoardsController : ControllerBase
     {
         private readonly IBoardService _boardService;
@@ -17,7 +19,6 @@ namespace BattleshipChallenge.Api.Controllers
 
         [HttpGet("{boardId}")]
         public ActionResult Get(int boardId)
-
         {
             throw new NotImplementedException("not needed for this exercise");
         }
@@ -26,7 +27,7 @@ namespace BattleshipChallenge.Api.Controllers
         public ActionResult Post([FromBody] Board board)
         {
             Board newBoard = _boardService.SaveBoard(board);
-            return Created(string.Empty, newBoard);
+            return Created(string.Empty, new ApiSuccessResponse(newBoard));
         }
 
         [HttpPut]

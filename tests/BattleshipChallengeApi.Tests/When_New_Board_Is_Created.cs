@@ -1,10 +1,10 @@
+using System.Threading.Tasks;
 using BattleshipChallenge.Core.Models;
 using BattleshipChallengeApi.IntegrationTests.Builders;
 using BattleshipChallengeApi.IntegrationTests.Fixtures;
-using System.Threading.Tasks;
 using Xunit;
 
-namespace BattleshipChallengeApi.IntegrationTests
+namespace BattleshipChallengeApi.Tests
 {
     public class When_New_Board_Is_Created : AddNewBoardFixture
     {

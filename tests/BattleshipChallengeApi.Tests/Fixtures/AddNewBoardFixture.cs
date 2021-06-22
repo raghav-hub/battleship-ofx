@@ -11,6 +11,9 @@ using System;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
+using BattleshipChallenge.Api.Infrastructure;
+using BattleshipChallengeApi.Tests.Fixtures;
+using Newtonsoft.Json;
 
 namespace BattleshipChallengeApi.IntegrationTests.Fixtures
 {
@@ -57,7 +60,8 @@ namespace BattleshipChallengeApi.IntegrationTests.Fixtures
 
         protected async Task AssertSuccessOnBoardCreation(Board expectedBoard)
         {
-            var apiCreatedBoard = await _result.Content.ReadFromJsonAsync<Board>();
+            var apiResponse = await _result.Content.ReadFromJsonAsync<ApiSuccessResponse>();
+            var apiCreatedBoard = JsonConvert.DeserializeObject<Board>(apiResponse.Data.ToString());
             apiCreatedBoard.Name.Should().Be(expectedBoard.Name);
             apiCreatedBoard.PlayerShips.Should().BeNull();
             apiCreatedBoard.OccupiedCoordinates.Should().BeNull();
